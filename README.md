@@ -26,7 +26,7 @@ This repo showcases an example with DeepSeek-R1 671B (hosted on the OpenRouter p
 
 I will show a tutorial below on how to run the example script in the "index.js" file (under the "examples" folder) in this repo which uses the `taot-ts` package.
 
-First, create an empty "examples" folder in your local device. Then copy the "index.js" and ".env" files (under the "examples" folder) in this repo into your "examples" folder in your local device. Note you will need to enter your own API key in the ".env" file.
+First, create an empty "examples" folder in your local device. Then copy the "index.js" and ".env" files (under the "examples" folder) in this repo into your empty "examples" folder in your local device. Note you will need to enter your own API key in the ".env" file.
 
 Then run the following lines of code:
 
