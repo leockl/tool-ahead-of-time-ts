@@ -31,7 +31,7 @@ First, create an empty "examples" folder in your local device. Then copy the "in
 Then run the following lines of code:
 
 ```bash
-# Navigate to your "examples" directory
+# Navigate to your "examples" directory in your local device
 cd examples
 
 # Initialize as npm project
