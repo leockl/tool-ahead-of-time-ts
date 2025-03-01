@@ -29,12 +29,12 @@ Follow the tutorial in the "index.js" file (under the "examples" folder) in this
 ## Change Log 📖
 
 20th Feb 2025:
-- Package now available on PyPI! Just "pip install taot" and you're ready to go.
+- Package now available on PyPI! Just "pip install taot" and you're ready to go. (v0.1.3)
 - Completely redesigned to follow LangChain's and LangGraph's intuitive `create_react_agent` tool calling methods.
 - Produces natural language responses when tool calling is performed.
 
 1st Mar 2025:
-- Package now available in TypeScript on npm! Just "npm install taot-ts" and you're ready to go (v0.1.4).
+- Package now available in TypeScript on npm! Just "npm install taot-ts" and you're ready to go. (v0.1.4)
 
 ## Contributions 🤝
 
