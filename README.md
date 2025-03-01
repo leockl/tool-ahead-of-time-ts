@@ -24,8 +24,6 @@ This repo showcases an example with DeepSeek-R1 671B (hosted on the OpenRouter p
 
 ## Quick Start 🚀
 
-Follow the tutorial in the "index.js" file (under the "examples" folder) in this repo for a fast and practical guide.
-
 I will show a tutorial here on how to run the script in the "index.js" file (under the "examples" folder) in this repo which uses the `taot-ts` package.
 
 ```bash
