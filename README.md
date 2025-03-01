@@ -26,6 +26,38 @@ This repo showcases an example with DeepSeek-R1 671B (hosted on the OpenRouter p
 
 Follow the tutorial in the "index.js" file (under the "examples" folder) in this repo for a fast and practical guide.
 
+I will show a tutorial here on how to run the script in the "index.js" file (under the "examples" folder) in this repo which uses the `taot-ts` package.
+
+```bash
+# First create the "examples" directory in your local device
+mkdir examples
+
+# Navigate to "examples" directory
+cd examples
+
+# Initialize as npm project
+npm init -y
+
+# Install the "taot-ts" package
+npm install taot-ts
+
+# Install dependencies required in the "index.js" file
+npm install dotenv @langchain/openai
+
+# Run the "index.js" file
+node index.js
+```
+
+After running the "index.js" file, you should see a similar results to the below:
+
+```bash
+123 multiplied by 456 equals 56,088.
+There are 7 words in the sentence "I built my 1st Hello World program."
+The product of 123 multiplied by 456 is **56,088**.
+There are 7 words in the sentence: *I*, *built*, *my*, *1st*, *Hello*, *World*, and *program*.
+The exact number of languages spoken globally is estimated to be around 7,000, though this number can vary due to factors like dialect continuums and language endangerment. Ethnologue (2023) currently documents 7,168 living languages.
+```
+
 ## Change Log 📖
 
 20th Feb 2025:
