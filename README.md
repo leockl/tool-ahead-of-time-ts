@@ -7,7 +7,7 @@ Well, hold my JSON parser, because this repo says "NOT TODAY!" 🦾
 
 ## What is this sorcery? 🧙‍♂️
 
-This is a TypeScript package (a package mirrowing the equivalent Python package: https://github.com/leockl/tool-ahead-of-time) that enables tool calling for any model available through Langchain's ChatOpenAI library (and by extension, any model available through OpenAI's library), even before LangChain and LangGraph officially supports it! 
+This is a TypeScript package (a package mirrowing the equivalent Python package: https://github.com/leockl/tool-ahead-of-time) that enables tool calling for any model available through Langchain's ChatOpenAI library (and by extension, any model available through OpenAI's library) and Langchain's BaseChatModel library, even before LangChain and LangGraph officially supports it! 
 
 Yes, you read that right. We're living in the age of AI and things move fast 🏎️💨
 
