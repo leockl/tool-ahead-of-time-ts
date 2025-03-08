@@ -7,13 +7,13 @@ Well, hold my JSON parser, because this repo says "NOT TODAY!" 🦾
 
 ## What is this sorcery? 🧙‍♂️
 
-This is a TypeScript package (a package mirrowing the equivalent Python package: https://github.com/leockl/tool-ahead-of-time) that enables tool calling for any model available through Langchain's ChatOpenAI library (and by extension, any model available through OpenAI's library) and Langchain's BaseChatModel library, even before LangChain and LangGraph officially supports it! 
+This is a TypeScript package (a package mirrowing the equivalent Python package: https://github.com/leockl/tool-ahead-of-time) that enables tool calling for any model available through Langchain.js's ChatOpenAI library (and by extension, any model available through OpenAI's library) and Langchain.js's BaseChatModel library, even before LangChain.js and LangGraph.js officially supports it! 
 
 Yes, you read that right. We're living in the age of AI and things move fast 🏎️💨
 
 It essentially works by reformatting the output response of the model into a JSON parser and passing this on to the relevant tools.
 
-This repo showcases an example with DeepSeek-R1 671B, which isn't currently supported with tool calling by LangChain and LangGraph (as of 16th Feb 2025).
+This repo showcases an example with DeepSeek-R1 671B, which isn't currently supported with tool calling by LangChain.js and LangGraph.js (as of 16th Feb 2025).
 
 ## Features 🌟
 
