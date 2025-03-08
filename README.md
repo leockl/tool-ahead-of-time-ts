@@ -32,10 +32,6 @@ I will show below how to run the tutorials for both the Langchain.js's ChatOpenA
 
 First, create an empty "tutorial" folder and an empty "ChatOpenAI" sub-folder in your local device. Then copy the "taotTutorialChatOpenAI.js" and ".env" files (under the "tutorial" folder and "ChatOpenAI" sub-folder in this repo) into your empty "ChatOpenAI" sub-folder in your local device. Note you will need to enter your own API key into the ".env" file.
 
-**Tip**: To setup Azure (ie. Azure AI Foundry) just ask any AI with internet access (so that you get the latest up to date steps) the following question: "You are an expert in Microsoft Azure. Can you tell me the latest step-by-step guide on how to setup an Azure AI Foundry account and deploy a model in Azure AI Foundry within the Azure AI Foundry platform.". Once you have your model deployed, you can obtain the value for the parameters endpoint and credential from the "Models + endpoints" tab in Azure AI Foundry as shown in the screenshot below:
-
-![deepseek-r1_azure](https://github.com/user-attachments/assets/40564165-9646-49ac-8ef3-62d85786a240)
-
 Then run the following lines of code:
 
 ```bash
@@ -68,6 +64,10 @@ The exact number of languages spoken globally is estimated to be around 7,000, t
 ### Langchain.js's BaseChatModel library
 
 First, create an empty "tutorial" folder and an empty "azure" sub-folder in your local device. Then copy the "taotTutorialBaseChatModelAzure.js" and ".env" files (under the "tutorial" folder and "azure" sub-folder in this repo) into your empty "azure" sub-folder in your local device. Note you will need to enter your own API key and endpoint into the ".env" file.
+
+**Tip**: To setup Azure (ie. Azure AI Foundry) just ask any AI with internet access (so that you get the latest up to date steps) the following question: "You are an expert in Microsoft Azure. Can you tell me the latest step-by-step guide on how to setup an Azure AI Foundry account and deploy a model in Azure AI Foundry within the Azure AI Foundry platform.". Once you have your model deployed, you can obtain the value for the parameters API key and endpoint from the "Models + endpoints" tab in Azure AI Foundry as shown in the screenshot below:
+
+![deepseek-r1_azure](https://github.com/user-attachments/assets/40564165-9646-49ac-8ef3-62d85786a240)
 
 Then run the following lines of code:
 
