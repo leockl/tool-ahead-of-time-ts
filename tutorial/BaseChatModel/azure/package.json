@@ -1,0 +1,18 @@
+{
+  "name": "azure",
+  "version": "1.0.0",
+  "main": "taotTutorialBaseChatModelAzure.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@langchain/core": "^0.3.42",
+    "dotenv": "^16.4.7",
+    "node-fetch": "^2.7.0",
+    "taot-ts": "^0.1.6"
+  }
+}
