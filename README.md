@@ -26,15 +26,17 @@ This repo showcases an example with DeepSeek-R1 671B, which isn't currently supp
 
 ## Quick Start 🚀
 
-I will show a tutorial below on how to run the example script in the "index.js" file (under the "examples" folder) in this repo which uses the `taot-ts` package.
+I will show below how to run the tutorials for both the Langchain.js's ChatOpenAI library and BaseChatModel library cases in this repo which uses the `taot-ts` package:
 
-First, create an empty "examples" folder in your local device. Then copy the "index.js" and ".env" files (under the "examples" folder) in this repo into your empty "examples" folder in your local device. Note you will need to enter your own API key into the ".env" file.
+### Langchain.js's ChatOpenAI library
+
+First, create an empty "tutorial" folder and an empty "ChatOpenAI" sub-folder in your local device. Then copy the "taotTutorialChatOpenAI.js" and ".env" files (under the "tutorial" folder and "ChatOpenAI" sub-folder in this repo) into your empty "ChatOpenAI" sub-folder in your local device. Note you will need to enter your own API key into the ".env" file.
 
 Then run the following lines of code:
 
 ```bash
-# Navigate to the "examples" directory in your local device
-cd examples
+# Navigate to the "ChatOpenAI" sub-directory in your local device
+cd tutorial\ChatOpenAI
 
 # Initialize as npm project
 npm init -y
@@ -42,14 +44,14 @@ npm init -y
 # Npm install the "taot-ts" package
 npm install taot-ts
 
-# Npm install dependencies required in the "index.js" file
+# Npm install dependencies required in the "taotTutorialChatOpenAI.js" file
 npm install dotenv @langchain/openai
 
-# Run the "index.js" file
-node index.js
+# Run the "taotTutorialChatOpenAI.js" file
+node taotTutorialChatOpenAI.js
 ```
 
-After running the "index.js" file, you should see a similar results to the below:
+After running the "taotTutorialChatOpenAI.js" file, you should see a similar results to the below:
 
 ```bash
 123 multiplied by 456 equals 56,088.
@@ -57,6 +59,77 @@ There are 7 words in the sentence "I built my 1st Hello World program."
 The product of 123 multiplied by 456 is **56,088**.
 There are 7 words in the sentence: *I*, *built*, *my*, *1st*, *Hello*, *World*, and *program*.
 The exact number of languages spoken globally is estimated to be around 7,000, though this number can vary due to factors like dialect continuums and language endangerment. Ethnologue (2023) currently documents 7,168 living languages.
+```
+
+### Langchain.js's BaseChatModel library
+
+First, create an empty "tutorial" folder and an empty "azure" sub-folder in your local device. Then copy the "taotTutorialBaseChatModelAzure.js" and ".env" files (under the "tutorial" folder and "azure" sub-folder in this repo) into your empty "azure" sub-folder in your local device. Note you will need to enter your own API key and endpoint into the ".env" file.
+
+Then run the following lines of code:
+
+```bash
+# Navigate to the "azure" sub-directory in your local device
+cd tutorial\azure
+
+# Initialize as npm project
+npm init -y
+
+# Npm install the "taot-ts" package
+npm install taot-ts
+
+# Npm install dependencies required in the "taotTutorialBaseChatModelAzure.js" file
+npm install dotenv node-fetch@2 @langchain/core
+
+# Run the "taotTutorialBaseChatModelAzure.js" file
+node taotTutorialBaseChatModelAzure.js
+```
+
+After running the "taotTutorialBaseChatModelAzure.js" file, you should see a similar results to the below:
+
+```bash
+<think>
+Okay, the user asked for the product of 123 and 456. I need to provide a clear answer using the calculator result, which is 56088. The instructions say not to mention the tool used, so I shouldn't refer to a calculator. Just state the result directly. Let me phrase it concisely. Maybe start with "The product of 123 multiplied by 456 is 56,088." That's straightforward and includes the commas for readability. Check if the number is correct: 123*456. Let me do a quick verification. 100*456=45,600, 20*456=9,120, 3*456=1,368. Adding those: 45,600 + 9,120 = 54,720 + 1,368 = 56,088. Yep, that's right. So the answer is correct. Alright, just present the result as the answer without any extra details. That should do it.
+</think>
+
+The product of 123 multiplied by 456 is **56,088**.
+<think>
+Okay, the user asked, "How many words are in this sentence?: I built my 1st Hello World program". The tool result says 7. Let me check that.
+
+First, the sentence is "I built my 1st Hello World program". Let's count the words. "I" is 1, "built" 2, "my" 3, "1st" 4, "Hello" 5, "World" 6, "program" 7. So yeah, that's seven words. The number "1st" counts as a single word even though it's a numeral and a suffix. Similarly, "Hello World" is two separate words. The user might wonder if contractions or numbers affect the count, but standard practice is to count each sequence of characters between spaces as a word. So the answer should be straightforward: "There are 7 words in that sentence."
+</think>
+
+There are 7 words in the sentence: "I built my 1st Hello World program."
+<think>
+Okay, the user asked for the product of 123 and 456. The calculator gave 56,088. I need to answer naturally without mentioning the tool. Let me phrase it simply. Start with the result, maybe state the numbers multiplied equal that. Keep it short and direct. No extra words. Check the numbers again to be sure. Yeah, 123 times 456 is indeed 56,088. Alright, that should do it.
+</think>
+
+The product of 123 multiplied by 456 is **56,088**.
+<think>
+Okay, the user is asking how many words are in the sentence they provided. The sentence is "I built my 1st Hello World program". The tool result says 7 words. Let me check that.
+
+First, I need to split the sentence into words. Words are usually separated by spaces. Let's break it down:
+
+1. I
+2. built
+3. my
+4. 1st
+5. Hello
+6. World
+7. program
+
+That's seven words. Wait, sometimes people might confuse numbers with hyphens or other characters, but "1st" is a single word. "Hello World" here is two separate words because of the space. So yes, the tool is correct.
+
+The user wants a concise and direct response without mentioning the tool. So the answer should just state the number. Maybe like, "There are 7 words in the sentence." That's straightforward and uses the result without extra details.
+</think>
+
+There are 7 words in the sentence.
+<think>
+Okay, the user is asking how many languages there are in the world. Let me think. The question is about counting languages. I remember that there's a tool called 'text_analyzer' which can analyze text. But wait, the user didn't provide any text to analyze. The tools I have are calculator and text_analyzer. The calculator is for math expressions, and text_analyzer is for analyzing provided text, counting words or characters.
+
+Since the user's question isn't about analyzing a given text or performing a calculation, but rather a factual question about the number of languages globally, there's no tool available here. The text_analyzer requires the user to provide text, which they didn't. So the correct response is to answer directly. But the user's previous instruction said to only use tools when applicable and answer in plain text otherwise. The assistant should know that this question can't be addressed with the available tools, hence respond in plain text with the factual answer.
+</think>
+
+The exact number of languages in the world is difficult to determine, but estimates suggest there are roughly 7,000-7,100 living languages globally. This number fluctuates due to factors like language endangerment and discovery of undocumented languages.
 ```
 
 ## Change Log 📖
