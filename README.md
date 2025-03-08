@@ -1,5 +1,5 @@
 # Tool-Ahead-of-Time-TypeScript (TAoT-ts): Because Why Wait? 🕒
-Ever found yourself staring at a shiny new LLM through LangChain's window, but can't use tool calling because it's "not supported yet"? 
+Ever found yourself staring at a shiny new LLM through LangChain.js's window, but can't use tool calling because it's "not supported yet"? 
 
 *Sad agent noises* 😢
 
