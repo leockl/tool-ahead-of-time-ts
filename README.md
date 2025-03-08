@@ -136,7 +136,7 @@ Since the user's question isn't about analyzing a given text or performing a cal
 The exact number of languages in the world is difficult to determine, but estimates suggest there are roughly 7,000-7,100 living languages globally. This number fluctuates due to factors like language endangerment and discovery of undocumented languages.
 ```
 
-To remove the "think" blocks from the response, use the line of code `content.split('</think>')[1].trim()`. I have done this for you in the "taotTutorialBaseChatModelAzureNoThink.js" file under the "tutorial" folder -> "BaseChatModel" sub-folder -> "azureNoThink" sub-sub-folder in this repo. Just follow the same steps under **Langchain.js's BaseChatModel library** above to run the "taotTutorialBaseChatModelAzureNoThink.js" file and you should see a similar results to the below:
+To remove the "think" blocks from the response, use the line of code `content.split('</think>')[1].trim()`. I have done this for you in the "taotTutorialBaseChatModelAzureNoThink.js" file under the "tutorial" folder -> "BaseChatModel" sub-folder -> "azureNoThink" sub-sub-folder in this repo. Just follow the same steps under "**Langchain.js's BaseChatModel library**" above to run the "taotTutorialBaseChatModelAzureNoThink.js" file and you should see a similar results to the below:
 
 ```bash
 The result of 123 multiplied by 456 is **56,088**.
