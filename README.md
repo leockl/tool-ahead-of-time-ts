@@ -63,7 +63,7 @@ The exact number of languages spoken globally is estimated to be around 7,000, t
 
 ### Langchain.js's BaseChatModel library
 
-First, create an empty "tutorial" folder and an empty "azure" sub-folder in your local device. Then copy the "taotTutorialBaseChatModelAzure.js" and ".env" files (under the "tutorial" folder and "azure" sub-folder in this repo) into your empty "azure" sub-folder in your local device. Note you will need to enter your own API key and endpoint into the ".env" file.
+First, create an empty "tutorial" folder, an empty "BaseChatModel" sub-folder and an empty "azure" sub-sub-folder in your local device. Then copy the "taotTutorialBaseChatModelAzure.js" and ".env" files (under the "tutorial" folder -> "BaseChatModel" sub-folder -> "azure" sub-sub-folder in this repo) into your empty "azure" sub-sub-folder in your local device. Note you will need to enter your own API key and endpoint into the ".env" file.
 
 **Tip**: To setup Azure (ie. Azure AI Foundry) just ask any AI with internet access (so that you get the latest up to date steps) the following question: "You are an expert in Microsoft Azure. Can you tell me the latest step-by-step guide on how to setup an Azure AI Foundry account and deploy a model in Azure AI Foundry within the Azure AI Foundry platform.". Once you have your model deployed, you can obtain the value for the parameters API key (credential) and endpoint from the "Models + endpoints" tab in Azure AI Foundry as shown in the screenshot below:
 
@@ -72,8 +72,8 @@ First, create an empty "tutorial" folder and an empty "azure" sub-folder in your
 Then run the following lines of code:
 
 ```bash
-# Navigate to the "azure" sub-directory in your local device
-cd tutorial\azure
+# Navigate to the "azure" sub-sub-directory in your local device
+cd tutorial\BaseChatModel\azure
 
 # Initialize as npm project
 npm init -y
@@ -134,6 +134,16 @@ Since the user's question isn't about analyzing a given text or performing a cal
 </think>
 
 The exact number of languages in the world is difficult to determine, but estimates suggest there are roughly 7,000-7,100 living languages globally. This number fluctuates due to factors like language endangerment and discovery of undocumented languages.
+```
+
+To remove the "think" blocks from the response, use the code `content.split('</think>')[1].trim()`. I have done this for you in the "taotTutorialBaseChatModelAzureNoThink.js" file under the "tutorial" folder -> "BaseChatModel" sub-folder -> "azureNoThink" sub-sub-folder in this repo. Just follow the same steps under **Langchain.js's BaseChatModel library** above to run the "taotTutorialBaseChatModelAzureNoThink.js" file and you should see a similar results to the below:
+
+```bash
+The result of 123 multiplied by 456 is **56,088**.
+There are 7 words in the sentence.
+The product of 123 and 456 is **56,088**.
+The sentence "I built my 1st Hello World program" contains **7 words**.
+The exact number of languages in the world is difficult to determine, but estimates suggest there are approximately **7,000 languages** spoken globally. This number fluctuates due to factors like language endangerment, evolution, and documentation efforts.
 ```
 
 ## Change Log 📖
