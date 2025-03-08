@@ -67,7 +67,7 @@ First, create an empty "tutorial" folder, an empty "BaseChatModel" sub-folder an
 
 **Tip**: To setup Azure (ie. Azure AI Foundry) just ask any AI with internet access (so that you get the latest up to date steps) the following question: "You are an expert in Microsoft Azure. Can you tell me the latest step-by-step guide on how to setup an Azure AI Foundry account and deploy a model in Azure AI Foundry within the Azure AI Foundry platform.". Once you have your model deployed, you can obtain the value for the parameters API key (credential) and endpoint from the "Models + endpoints" tab in Azure AI Foundry as shown in the screenshot below:
 
-![deepseek-r1_azure](https://github.com/user-attachments/assets/40564165-9646-49ac-8ef3-62d85786a240)
+![deepseek-r1_azure](https://github.com/user-attachments/assets/b9ec1a0d-d509-48e8-8591-4d9af29f392c)
 
 Then run the following lines of code:
 
