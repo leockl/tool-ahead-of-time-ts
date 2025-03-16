@@ -157,7 +157,7 @@ The exact number of languages in the world is difficult to determine, but estima
 - Package now available in TypeScript on npm! Just "npm install taot-ts" and you're ready to go.
 
 8th Mar 2025:
-- Updated package to include implementation support for Microsoft Azure via Langchain.js's BaseChatModel library (Note: As of 8th Mar 2025, Langchain.js's ChatOpenAI, ChatAzureOpenAI (considered to be deprecated) and AzureChatOpenAI does not provide Microsoft Azure support for the DeepSeek-R1 model).
+- Updated repo to include implementation support for Microsoft Azure via Langchain.js's BaseChatModel library (Note: As of 8th Mar 2025, Langchain.js's ChatOpenAI, ChatAzureOpenAI (considered to be deprecated) and AzureChatOpenAI does not provide Microsoft Azure support for the DeepSeek-R1 model).
 
 ## Contributions 🤝
 
