@@ -159,6 +159,10 @@ The exact number of languages in the world is difficult to determine, but estima
 8th Mar 2025:
 - Updated repo to include implementation support for Microsoft Azure via Langchain.js's BaseChatModel library (Note: As of 8th Mar 2025, Langchain.js's ChatOpenAI, ChatAzureOpenAI (considered to be deprecated) and AzureChatOpenAI does not provide Microsoft Azure support for the DeepSeek-R1 model).
 
+16th Mar 2025:
+- Updated repo to include example tutorial for tool calling support for QwQ-32B using Langchain.js's ChatOpenAI library (hosted on OpenRouter). See "taotTutorialChatOpenAI_QwQ32B.js" file under the "tutorial" folder -> "ChatOpenAI_QwQ32B" sub-folder in this repo. While doing this, I noticed OpenRouter's API for QwQ-32B is unstable and returning empty responses (likely because QwQ-32B is a new model added on OpenRouter only about a week ago). Due to this, I have updated the taot-ts package to keep looping until a non-empty response is returned. If you have previously downloaded the package, please update the package via `npm update taot-ts`.
+- Checked out OpenAI Agents SDK framework for tool calling support for non-OpenAI providers/models (https://openai.github.io/openai-agents-python/models/) and they don't support tool calling for DeepSeek-R1 (or models available through OpenRouter) yet (as of 16th Mar 2025), so there you go.
+
 ## Contributions 🤝
 
 Feel free to contribute! Whether it's adding features, fixing bugs, adding comments in the code or any suggestions to improve this repo, all are welcomed 😄
