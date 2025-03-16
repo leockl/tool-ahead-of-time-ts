@@ -26,9 +26,9 @@ This repo showcases an example with DeepSeek-R1 671B, which isn't currently supp
 
 ## Quick Start 🚀
 
-I will show below how to run the tutorials for both the Langchain.js's ChatOpenAI library and BaseChatModel library cases in this repo which uses the `taot-ts` package:
+I will show below how to run the tutorials for Langchain.js's ChatOpenAI library (for DeepSeek-R1 on OpenRouter), Langchain.js's BaseChatModel library (for DeepSeek-R1 on Microsoft Azure) and Langchain.js's ChatOpenAI library (for QwQ-32B on OpenRouter) in this repo which uses the `taot-ts` package:
 
-### Langchain.js's ChatOpenAI library
+### Langchain.js's ChatOpenAI library (for DeepSeek-R1 on OpenRouter)
 
 First, create an empty "tutorial" folder and an empty "ChatOpenAI" sub-folder in your local device. Then copy the "taotTutorialChatOpenAI.js" and ".env" files (under the "tutorial" folder and "ChatOpenAI" sub-folder in this repo) into your empty "ChatOpenAI" sub-folder in your local device. Note you will need to enter your own API key into the ".env" file.
 
@@ -61,7 +61,7 @@ There are 7 words in the sentence: *I*, *built*, *my*, *1st*, *Hello*, *World*, 
 The exact number of languages spoken globally is estimated to be around 7,000, though this number can vary due to factors like dialect continuums and language endangerment. Ethnologue (2023) currently documents 7,168 living languages.
 ```
 
-### Langchain.js's BaseChatModel library
+### Langchain.js's BaseChatModel library (for DeepSeek-R1 on Microsoft Azure)
 
 First, create an empty "tutorial" folder, an empty "BaseChatModel" sub-folder and an empty "azure" sub-sub-folder in your local device. Then copy the "taotTutorialBaseChatModelAzure.js" and ".env" files (under the "tutorial" folder -> "BaseChatModel" sub-folder -> "azure" sub-sub-folder in this repo) into your empty "azure" sub-sub-folder in your local device. Note you will need to enter your own API key and endpoint into the ".env" file.
 
@@ -144,6 +144,39 @@ There are 7 words in the sentence.
 The product of 123 and 456 is **56,088**.
 The sentence "I built my 1st Hello World program" contains **7 words**.
 The exact number of languages in the world is difficult to determine, but estimates suggest there are approximately **7,000 languages** spoken globally. This number fluctuates due to factors like language endangerment, evolution, and documentation efforts.
+```
+
+### Langchain.js's ChatOpenAI library (for QwQ-32B on OpenRouter)
+
+First, create an empty "tutorial" folder and an empty "ChatOpenAI_QwQ32B" sub-folder in your local device. Then copy the "taotTutorialChatOpenAI_QwQ32B.js" and ".env" files (under the "tutorial" folder and "ChatOpenAI_QwQ32B" sub-folder in this repo) into your empty "ChatOpenAI_QwQ32B" sub-folder in your local device. Note you will need to enter your own API key into the ".env" file.
+
+Then run the following lines of code:
+
+```bash
+# Navigate to the "ChatOpenAI_QwQ32B" sub-directory in your local device
+cd tutorial\ChatOpenAI_QwQ32B
+
+# Initialize as npm project
+npm init -y
+
+# Npm install the "taot-ts" package
+npm install taot-ts
+
+# Npm install dependencies required in the "taotTutorialChatOpenAI.js" file
+npm install dotenv @langchain/openai
+
+# Run the "taotTutorialChatOpenAI.js" file
+node taotTutorialChatOpenAI_QwQ32B.js
+```
+
+After running the "taotTutorialChatOpenAI.js" file, you should see a similar results to the below:
+
+```bash
+The result of 123 multiplied by 456 is 56,088.
+There are 7 words in the sentence "I built my 1st Hello World program." Let me know if you need help with anything else!
+The product of 123 and 456 is 56,088.
+The sentence "I built my 1st Hello World program" contains **7 words**.
+The number of languages in the world is a complex and debated figure, but the most commonly cited estimate from Ethnologue is **7,100+ living languages**. This number can vary based on classification criteria and ongoing documentation efforts.
 ```
 
 ## Change Log 📖
