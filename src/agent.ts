@@ -1,4 +1,3 @@
-import { ChatOpenAI } from "@langchain/openai";
 import { SystemMessage, HumanMessage, AIMessage, BaseMessage } from "@langchain/core/messages";
 import { Runnable } from "@langchain/core/runnables";
 import { ToolCall } from "./models";
@@ -25,8 +24,9 @@ export interface Tool {
 export class ManualToolAgent extends Runnable<{ messages: Message[] }, { messages: { content: string }[] }> {
   lc_namespace = ["taot_ts", "agents"];
   
-  private model: ChatOpenAI;
-  private tools: Tool[];
+  private model: any;
+  private tools: any[];
+  private maxRetries: number = 100;
   
   /**
    * Create a new ManualToolAgent instance.
@@ -34,7 +34,7 @@ export class ManualToolAgent extends Runnable<{ messages: Message[] }, { message
    * @param model - The language model to use
    * @param tools - List of tool functions
    */
-  constructor(model: ChatOpenAI, tools: Tool[]) {
+  constructor(model: any, tools: any[]) {
     super({});
     this.model = model;
     this.tools = tools;
@@ -50,6 +50,22 @@ export class ManualToolAgent extends Runnable<{ messages: Message[] }, { message
     inputs: { messages: Message[] }
   ): Promise<{ messages: { content: string }[] }> {
     return this._call(inputs);
+  }
+
+  /**
+   * Check if the response is empty or contains only whitespace.
+   * 
+   * @param responseText - The response text to check
+   * @returns True if response is empty, False otherwise
+   */
+  private isEmptyResponse(responseText: string | null | undefined): boolean {
+    if (responseText === null || responseText === undefined) {
+      return true;
+    }
+    if (!responseText.trim()) {
+      return true;
+    }
+    return false;
   }
 
   /**
@@ -97,8 +113,20 @@ Tool result: ${toolResult}
 Create a natural language response to the user query that incorporates the result from the tool. Do not mention anything about using the tool used. 
 Keep it concise and direct.`;
     
-    const response = await this.model.invoke([new HumanMessage({ content: prompt })]);
-    return response.content as string;
+    let retryCount = 0;
+    while (retryCount < this.maxRetries) {
+      const response = await this.model.invoke([new HumanMessage({ content: prompt })]);
+      const responseContent = response.content as string;
+      
+      if (!this.isEmptyResponse(responseContent)) {
+        return responseContent;
+      }
+      retryCount++;
+    }
+    
+    // If we've reached here, we've exceeded max retries with empty responses
+    // Return a default response with the raw tool result
+    return `The result is: ${toolResult}`;
   }
 
   /**
@@ -166,12 +194,28 @@ Keep it concise and direct.`;
     });
     const augmentedMessages = [...convertedMessages, thinkingPrompt];
     
-    // Get response from the model
-    const response = await this.model.invoke(augmentedMessages);
-    const lastResponse = response.content as string;
+    // Get response from the model with retry logic for empty responses
+    let lastResponse: string | null = null;
+    let retryCount = 0;
+    
+    while (retryCount < this.maxRetries) {
+      const response = await this.model.invoke(augmentedMessages);
+      lastResponse = response.content as string;
+      
+      if (!this.isEmptyResponse(lastResponse)) {
+        break;
+      }
+      
+      retryCount++;
+    }
+    
+    // If we still have an empty response after all retries, return an error message
+    if (this.isEmptyResponse(lastResponse)) {
+      return { messages: [{ content: "I'm having trouble generating a response. Please try again." }] };
+    }
     
     // Try to parse as a tool call
-    const toolCall = this.parseToolCall(lastResponse);
+    const toolCall = this.parseToolCall(lastResponse as string);
     
     if (toolCall) {
       try {
@@ -194,7 +238,7 @@ Keep it concise and direct.`;
         };
       }
     } else {
-      return { messages: [{ content: lastResponse }] };
+      return { messages: [{ content: lastResponse as string }] };
     }
   }
 }
@@ -207,8 +251,8 @@ Keep it concise and direct.`;
  * @returns Agent with manual tool handling
  */
 export function createReactAgentTaot(
-  model: ChatOpenAI, 
-  tools: Tool[]
+  model: any, 
+  tools: any[]
 ): ManualToolAgent {
   return new ManualToolAgent(model, tools);
 }
