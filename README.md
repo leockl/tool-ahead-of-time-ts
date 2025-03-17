@@ -169,7 +169,7 @@ npm install dotenv @langchain/openai
 node taotTutorialChatOpenAI_QwQ32B.js
 ```
 
-After running the "taotTutorialChatOpenAI.js" file, you should see a similar results to the below:
+After running the "taotTutorialChatOpenAI_QwQ32B.js" file, you should see a similar results to the below:
 
 ```bash
 The result of 123 multiplied by 456 is 56,088.
