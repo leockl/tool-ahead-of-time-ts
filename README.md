@@ -179,7 +179,7 @@ The sentence "I built my 1st Hello World program" contains **7 words**.
 The number of languages in the world is a complex and debated figure, but the most commonly cited estimate from Ethnologue is **7,100+ living languages**. This number can vary based on classification criteria and ongoing documentation efforts.
 ```
 
-## Change Log 📖
+## Changelog 📖
 
 20th Feb 2025:
 - Package now available on PyPI! Just "pip install taot" and you're ready to go.
