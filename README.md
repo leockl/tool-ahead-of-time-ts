@@ -18,8 +18,8 @@ This repo showcases an example with DeepSeek-R1 671B, which isn't currently supp
 ## Features 🌟
 
 - Tool calling support for OpenAI and non-OpenAI models available on:
-  - Langchain.js's ChatOpenAI library (and by extension, OpenAI and non-OpenAI models available on the base OpenAI's library).
-  - Langchain.js's BaseChatModel library.
+  - LangChain.js's ChatOpenAI library (and by extension, OpenAI and non-OpenAI models available on the base OpenAI's library).
+  - LangChain.js's BaseChatModel library.
 - This package follows a similar method to LangChain.js's and LangGraph.js's `createReactAgent` method for tool calling, so makes it easy for you to read the syntax. 😊
 - Zero waiting for official support required.
 - More robust than a caffeinated developer at 3 AM. ☕
