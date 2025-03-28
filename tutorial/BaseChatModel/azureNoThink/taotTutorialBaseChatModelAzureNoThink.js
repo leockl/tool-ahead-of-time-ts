@@ -62,7 +62,7 @@ const textAnalyzerTool = {
 
 // Initialize model - reused across examples
 // Create a custom chat model that uses direct fetch from LangChain's BaseChatModel implementation
-// In this tutorial, I am using the DeepSeek-R1 model hosted on Azure. This model hosted on Azure is available on Langchain.js's BaseChatModel library
+// In this tutorial, I am using the DeepSeek-R1 671B model hosted on Azure. This model hosted on Azure is available on Langchain.js's BaseChatModel library
 // If you want to use another model, you will need to check if your model (hosted on Azure) is first available on Langchain.js's BaseChatModel library, and then change the values of the parameters "apiKey" and "baseUrl" below according to how you deployed your model on Azure AI Foundry
 // Note: If you want to change the default temperature and max output tokens of the model, you can do this from the "temperature" and "max_tokens" paramters below
 class CustomAzureAIModel extends BaseChatModel {
