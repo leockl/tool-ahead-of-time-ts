@@ -7,7 +7,7 @@ Well, hold my JSON parser, because this repo says "NOT TODAY!" 🦾
 
 ## What is this sorcery? 🧙‍♂️
 
-This is a TypeScript package (a package mirrowing the equivalent Python package: https://github.com/leockl/tool-ahead-of-time) that enables tool calling for any model available through Langchain.js's ChatOpenAI library (and by extension, any model available through OpenAI's library) and Langchain.js's BaseChatModel library, even before LangChain.js and LangGraph.js officially supports it! 
+This is a TypeScript package (a package mirrowing the equivalent Python package: https://github.com/leockl/tool-ahead-of-time) that enables tool calling for any model available through LangChain.js's ChatOpenAI library (and by extension, any model available through OpenAI's library), any model available through LangChain.js's BaseChatModel library and any model available through LangChain.js's ChatBedrockConverse library, even before LangChain.js and LangGraph.js officially supports it! 
 
 Yes, you read that right. We're living in the age of AI and things move fast 🏎️💨
 
@@ -20,13 +20,14 @@ This repo showcases an example with DeepSeek-R1 671B, which isn't currently supp
 - Tool calling support for OpenAI and non-OpenAI models available on:
   - LangChain.js's ChatOpenAI library (and by extension, OpenAI and non-OpenAI models available on the base OpenAI's library).
   - LangChain.js's BaseChatModel library.
+  - LangChain.js's ChatBedrockConverse library.
 - This package follows a similar method to LangChain.js's and LangGraph.js's `createReactAgent` method for tool calling, so makes it easy for you to read the syntax. 😊
 - Zero waiting for official support required.
 - More robust than a caffeinated developer at 3 AM. ☕
 
 ## Quick Start 🚀
 
-I will show below how to run the tutorials for Langchain.js's ChatOpenAI library (using DeepSeek-R1 on OpenRouter), Langchain.js's BaseChatModel library (using DeepSeek-R1 on Microsoft Azure) and Langchain.js's ChatOpenAI library (using QwQ-32B on OpenRouter) in this repo which uses the `taot-ts` package:
+I will show below how to run the tutorials for LangChain.js's ChatOpenAI library (using DeepSeek-R1 671B on OpenRouter), LangChain.js's BaseChatModel library (using DeepSeek-R1 671B on Microsoft Azure), LangChain.js's ChatOpenAI library (using QwQ-32B on OpenRouter) and LangChain.js's ChatBedrockConverse library (using DeepSeek-R1 671B on Amazon Bedrock) in this repo which uses the `taot-ts` package:
 
 ### 1. Langchain.js's ChatOpenAI library (using DeepSeek-R1 on OpenRouter)
 
