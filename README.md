@@ -29,7 +29,7 @@ This repo showcases an example with DeepSeek-R1 671B, which isn't currently supp
 
 I will show below how to run the tutorials for LangChain.js's ChatOpenAI library (using DeepSeek-R1 671B on OpenRouter), LangChain.js's BaseChatModel library (using DeepSeek-R1 671B on Microsoft Azure), LangChain.js's ChatOpenAI library (using QwQ-32B on OpenRouter) and LangChain.js's ChatBedrockConverse library (using DeepSeek-R1 671B on Amazon Bedrock) in this repo which uses the `taot-ts` package:
 
-### 1. Langchain.js's ChatOpenAI library (using DeepSeek-R1 on OpenRouter)
+### 1. LangChain.js's ChatOpenAI library (using DeepSeek-R1 671B on OpenRouter)
 
 First, create an empty "tutorial" folder and an empty "ChatOpenAI" sub-folder in your local device. Then copy the "taotTutorialChatOpenAI.js" and ".env" files (under the "tutorial" folder and "ChatOpenAI" sub-folder in this repo) into your empty "ChatOpenAI" sub-folder in your local device. Note you will need to enter your own API key into the ".env" file.
 
@@ -62,7 +62,7 @@ There are 7 words in the sentence: *I*, *built*, *my*, *1st*, *Hello*, *World*, 
 The exact number of languages spoken globally is estimated to be around 7,000, though this number can vary due to factors like dialect continuums and language endangerment. Ethnologue (2023) currently documents 7,168 living languages.
 ```
 
-### 2. Langchain.js's BaseChatModel library (using DeepSeek-R1 on Microsoft Azure)
+### 2. LangChain.js's BaseChatModel library (using DeepSeek-R1 671B on Microsoft Azure)
 
 First, create an empty "tutorial" folder, an empty "BaseChatModel" sub-folder and an empty "azure" sub-sub-folder in your local device. Then copy the "taotTutorialBaseChatModelAzure.js" and ".env" files (under the "tutorial" folder -> "BaseChatModel" sub-folder -> "azure" sub-sub-folder in this repo) into your empty "azure" sub-sub-folder in your local device. Note you will need to enter your own API key and endpoint into the ".env" file.
 
@@ -147,7 +147,7 @@ The sentence "I built my 1st Hello World program" contains **7 words**.
 The exact number of languages in the world is difficult to determine, but estimates suggest there are approximately **7,000 languages** spoken globally. This number fluctuates due to factors like language endangerment, evolution, and documentation efforts.
 ```
 
-### 3. Langchain.js's ChatOpenAI library (using QwQ-32B on OpenRouter)
+### 3. LangChain.js's ChatOpenAI library (using QwQ-32B on OpenRouter)
 
 First, create an empty "tutorial" folder and an empty "ChatOpenAI_QwQ32B" sub-folder in your local device. Then copy the "taotTutorialChatOpenAI_QwQ32B.js" and ".env" files (under the "tutorial" folder and "ChatOpenAI_QwQ32B" sub-folder in this repo) into your empty "ChatOpenAI_QwQ32B" sub-folder in your local device. Note you will need to enter your own API key into the ".env" file.
 
@@ -180,6 +180,10 @@ The sentence "I built my 1st Hello World program" contains **7 words**.
 The number of languages in the world is a complex and debated figure, but the most commonly cited estimate from Ethnologue is **7,100+ living languages**. This number can vary based on classification criteria and ongoing documentation efforts.
 ```
 
+### 4. LangChain.js's ChatBedrockConverse library (using DeepSeek-R1 671B on Amazon Bedrock)
+
+
+
 ## Changelog 📖
 
 20th Feb 2025:
@@ -196,6 +200,9 @@ The number of languages in the world is a complex and debated figure, but the mo
 16th Mar 2025:
 - Updated repo to include example tutorial for tool calling support for QwQ-32B using Langchain.js's ChatOpenAI library (hosted on OpenRouter). See "taotTutorialChatOpenAI_QwQ32B.js" file under the "tutorial" folder -> "ChatOpenAI_QwQ32B" sub-folder in this repo. While doing this, I noticed OpenRouter's API for QwQ-32B is unstable and returning empty responses (likely because QwQ-32B is a new model added on OpenRouter only about a week ago). Due to this, I have updated the taot-ts package to keep looping until a non-empty response is returned. If you have previously downloaded the package, please update the package via `npm update taot-ts`.
 - Checked out OpenAI Agents SDK framework for tool calling support for non-OpenAI providers/models (https://openai.github.io/openai-agents-python/models/) and they don't support tool calling for DeepSeek-R1 (or models available through OpenRouter) yet (as of 16th Mar 2025), so there you go! 😉
+
+28th Mar 2025:
+- Updated repo to include implementation support for Amazon Bedrock via LangChain.js's ChatBedrockConverse library.
 
 ## Contributions 🤝
 
