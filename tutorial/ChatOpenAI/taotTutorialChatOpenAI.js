@@ -59,8 +59,8 @@ const textAnalyzerTool = {
 };
 
 // Initialize model - reused across examples
-// In this tutorial, I am using the DeepSeek-R1 671B model hosted on the platform OpenRouter. This model hosted on OpenRouter is available on Langchain's ChatOpenAI library.
-// If you want to use another model, you will need to check if your model (hosted on whichever platform you have chosen, for eg. Azure, Together AI or DeepSeek's own platform etc.) is first available on Langchain.js's ChatOpenAI library, and then change the values of the parameters "model", "api_key" and "base_url" below according to which model and platform you have chosen.
+// In this tutorial, I am using the DeepSeek-R1 671B model hosted on the platform OpenRouter. This model hosted on OpenRouter is available on Langchain's ChatOpenAI class.
+// If you want to use another model, you will need to check if your model (hosted on whichever platform you have chosen, for eg. Azure, Together AI or DeepSeek's own platform etc.) is first available on Langchain.js's ChatOpenAI class, and then change the values of the parameters "model", "api_key" and "base_url" below according to which model and platform you have chosen.
 const createModel = () => {
     return new ChatOpenAI({
       modelName: "deepseek/deepseek-r1",
