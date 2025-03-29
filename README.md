@@ -199,6 +199,7 @@ The number of languages in the world is a complex and debated figure, but the mo
 28th Mar 2025:
 - Attempted to implement DeepSeek-R1 for Amazon Bedrock via LangChain.js's ChatBedrockConverse and LangChain.js's BedrockChat classes, but DeepSeek-R1's model ID `us.deepseek.r1-v1:0` is not yet supported for these two classes.
 - Managed to implement DeepSeek-R1 for Amazon Bedrock directly via JavaScript version of the AWS SDK (ie. `@aws-sdk/client-bedrock-runtime`), but the model responses are not stable where sometimes it will return the reasoning/thinking part of the model with no token tags (for eg. `</think>`, `<|Assistant|>`, `<|end_of_sentence|>` etc.) which will allow us to filter out the reasoning/thinking part. Because of this, I have decided not to release this implementation for now.
+- The Python implementation for Amazon Bedrock via LangChain's ChatBedrockConverse class was successful. Please refer to the equivalent Python repo for this package here: https://github.com/leockl/tool-ahead-of-time.
 
 ## Contributions 🤝
 
