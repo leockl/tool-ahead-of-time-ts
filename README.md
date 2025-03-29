@@ -7,7 +7,7 @@ Well, hold my JSON parser, because this repo says "NOT TODAY!" 🦾
 
 ## What is this sorcery? 🧙‍♂️
 
-This is a TypeScript package (a package mirrowing the equivalent Python package: https://github.com/leockl/tool-ahead-of-time) that enables tool calling for any model available through LangChain.js's ChatOpenAI library (and by extension, any model available through OpenAI's library), any model available through LangChain.js's BaseChatModel library and any model available through LangChain.js's ChatBedrockConverse library, even before LangChain.js and LangGraph.js officially supports it! 
+This is a TypeScript package (a package mirrowing the equivalent Python package: https://github.com/leockl/tool-ahead-of-time) that enables tool calling for any model available through LangChain.js's ChatOpenAI class (and by extension, any model available through OpenAI's class), and any model available through LangChain.js's BaseChatModel class, even before LangChain.js and LangGraph.js officially supports it! 
 
 Yes, you read that right. We're living in the age of AI and things move fast 🏎️💨
 
@@ -18,18 +18,17 @@ This repo showcases an example with DeepSeek-R1 671B, which isn't currently supp
 ## Features 🌟
 
 - Tool calling support for OpenAI and non-OpenAI models available on:
-  - LangChain.js's ChatOpenAI library (and by extension, OpenAI and non-OpenAI models available on the base OpenAI's library).
-  - LangChain.js's BaseChatModel library.
-  - LangChain.js's ChatBedrockConverse library.
+  - LangChain.js's ChatOpenAI class (and by extension, OpenAI and non-OpenAI models available on the base OpenAI's class).
+  - LangChain.js's BaseChatModel class.
 - This package follows a similar method to LangChain.js's and LangGraph.js's `createReactAgent` method for tool calling, so makes it easy for you to read the syntax. 😊
 - Zero waiting for official support required.
 - More robust than a caffeinated developer at 3 AM. ☕
 
 ## Quick Start 🚀
 
-I will show below how to run the tutorials for LangChain.js's ChatOpenAI library (using DeepSeek-R1 671B on OpenRouter), LangChain.js's BaseChatModel library (using DeepSeek-R1 671B on Microsoft Azure), LangChain.js's ChatOpenAI library (using QwQ-32B on OpenRouter) and LangChain.js's ChatBedrockConverse library (using DeepSeek-R1 671B on Amazon Bedrock) in this repo which uses the `taot-ts` package:
+I will show below how to run the tutorials for LangChain.js's ChatOpenAI class (using DeepSeek-R1 671B on OpenRouter), LangChain.js's BaseChatModel class (using DeepSeek-R1 671B on Microsoft Azure) and LangChain.js's ChatOpenAI class (using QwQ-32B on OpenRouter) in this repo which uses the `taot-ts` package:
 
-### 1. LangChain.js's ChatOpenAI library (using DeepSeek-R1 671B on OpenRouter)
+### 1. LangChain.js's ChatOpenAI class (using DeepSeek-R1 671B on OpenRouter)
 
 First, create an empty "tutorial" folder and an empty "ChatOpenAI" sub-folder in your local device. Then copy the "taotTutorialChatOpenAI.js" and ".env" files (under the "tutorial" folder and "ChatOpenAI" sub-folder in this repo) into your empty "ChatOpenAI" sub-folder in your local device. Note you will need to enter your own API key into the ".env" file.
 
@@ -62,7 +61,7 @@ There are 7 words in the sentence: *I*, *built*, *my*, *1st*, *Hello*, *World*, 
 The exact number of languages spoken globally is estimated to be around 7,000, though this number can vary due to factors like dialect continuums and language endangerment. Ethnologue (2023) currently documents 7,168 living languages.
 ```
 
-### 2. LangChain.js's BaseChatModel library (using DeepSeek-R1 671B on Microsoft Azure)
+### 2. LangChain.js's BaseChatModel class (using DeepSeek-R1 671B on Microsoft Azure)
 
 First, create an empty "tutorial" folder, an empty "BaseChatModel" sub-folder and an empty "azure" sub-sub-folder in your local device. Then copy the "taotTutorialBaseChatModelAzure.js" and ".env" files (under the "tutorial" folder -> "BaseChatModel" sub-folder -> "azure" sub-sub-folder in this repo) into your empty "azure" sub-sub-folder in your local device. Note you will need to enter your own API key and endpoint into the ".env" file.
 
@@ -137,7 +136,7 @@ Since the user's question isn't about analyzing a given text or performing a cal
 The exact number of languages in the world is difficult to determine, but estimates suggest there are roughly 7,000-7,100 living languages globally. This number fluctuates due to factors like language endangerment and discovery of undocumented languages.
 ```
 
-To remove the "think" blocks from the response, use the line of code `content.split('</think>')[1].trim()`. I have done this for you in the "taotTutorialBaseChatModelAzureNoThink.js" file under the "tutorial" folder -> "BaseChatModel" sub-folder -> "azureNoThink" sub-sub-folder in this repo. Just follow the same steps under "**Langchain.js's BaseChatModel library**" above but for the "taotTutorialBaseChatModelAzureNoThink.js" file. After running the "taotTutorialBaseChatModelAzureNoThink.js" file, you should see a similar results to the below:
+To remove the "think" blocks from the response, use the line of code `content.split('</think>')[1].trim()`. I have done this for you in the "taotTutorialBaseChatModelAzureNoThink.js" file under the "tutorial" folder -> "BaseChatModel" sub-folder -> "azureNoThink" sub-sub-folder in this repo. Just follow the same steps under "**Langchain.js's BaseChatModel class**" above but for the "taotTutorialBaseChatModelAzureNoThink.js" file. After running the "taotTutorialBaseChatModelAzureNoThink.js" file, you should see a similar results to the below:
 
 ```bash
 The result of 123 multiplied by 456 is **56,088**.
@@ -147,7 +146,7 @@ The sentence "I built my 1st Hello World program" contains **7 words**.
 The exact number of languages in the world is difficult to determine, but estimates suggest there are approximately **7,000 languages** spoken globally. This number fluctuates due to factors like language endangerment, evolution, and documentation efforts.
 ```
 
-### 3. LangChain.js's ChatOpenAI library (using QwQ-32B on OpenRouter)
+### 3. LangChain.js's ChatOpenAI class (using QwQ-32B on OpenRouter)
 
 First, create an empty "tutorial" folder and an empty "ChatOpenAI_QwQ32B" sub-folder in your local device. Then copy the "taotTutorialChatOpenAI_QwQ32B.js" and ".env" files (under the "tutorial" folder and "ChatOpenAI_QwQ32B" sub-folder in this repo) into your empty "ChatOpenAI_QwQ32B" sub-folder in your local device. Note you will need to enter your own API key into the ".env" file.
 
@@ -180,10 +179,6 @@ The sentence "I built my 1st Hello World program" contains **7 words**.
 The number of languages in the world is a complex and debated figure, but the most commonly cited estimate from Ethnologue is **7,100+ living languages**. This number can vary based on classification criteria and ongoing documentation efforts.
 ```
 
-### 4. LangChain.js's ChatBedrockConverse library (using DeepSeek-R1 671B on Amazon Bedrock)
-
-
-
 ## Changelog 📖
 
 20th Feb 2025:
@@ -195,14 +190,15 @@ The number of languages in the world is a complex and debated figure, but the mo
 - Package now available in TypeScript on npm! Just "npm install taot-ts" and you're ready to go.
 
 8th Mar 2025:
-- Updated repo to include implementation support for Microsoft Azure via Langchain.js's BaseChatModel library (Note: As of 8th Mar 2025, Langchain.js's ChatOpenAI, ChatAzureOpenAI (considered to be deprecated) and AzureChatOpenAI does not provide Microsoft Azure support for the DeepSeek-R1 model).
+- Updated repo to include implementation support for Microsoft Azure via Langchain.js's BaseChatModel class (Note: As of 8th Mar 2025, Langchain.js's ChatOpenAI, ChatAzureOpenAI (considered to be deprecated) and AzureChatOpenAI does not provide Microsoft Azure support for the DeepSeek-R1 model).
 
 16th Mar 2025:
-- Updated repo to include example tutorial for tool calling support for QwQ-32B using Langchain.js's ChatOpenAI library (hosted on OpenRouter). See "taotTutorialChatOpenAI_QwQ32B.js" file under the "tutorial" folder -> "ChatOpenAI_QwQ32B" sub-folder in this repo. While doing this, I noticed OpenRouter's API for QwQ-32B is unstable and returning empty responses (likely because QwQ-32B is a new model added on OpenRouter only about a week ago). Due to this, I have updated the taot-ts package to keep looping until a non-empty response is returned. If you have previously downloaded the package, please update the package via `npm update taot-ts`.
+- Updated repo to include example tutorial for tool calling support for QwQ-32B using Langchain.js's ChatOpenAI class (hosted on OpenRouter). See "taotTutorialChatOpenAI_QwQ32B.js" file under the "tutorial" folder -> "ChatOpenAI_QwQ32B" sub-folder in this repo. While doing this, I noticed OpenRouter's API for QwQ-32B is unstable and returning empty responses (likely because QwQ-32B is a new model added on OpenRouter only about a week ago). Due to this, I have updated the taot-ts package to keep looping until a non-empty response is returned. If you have previously downloaded the package, please update the package via `npm update taot-ts`.
 - Checked out OpenAI Agents SDK framework for tool calling support for non-OpenAI providers/models (https://openai.github.io/openai-agents-python/models/) and they don't support tool calling for DeepSeek-R1 (or models available through OpenRouter) yet (as of 16th Mar 2025), so there you go! 😉
 
 28th Mar 2025:
-- Updated repo to include implementation support for Amazon Bedrock via LangChain.js's ChatBedrockConverse library.
+- Attempted to implement DeepSeek-R1 for Amazon Bedrock via LangChain.js's ChatBedrockConverse and LangChain.js's BedrockChat classes, but DeepSeek-R1's model ID `us.deepseek.r1-v1:0` is not yet supported for these two classes.
+- Managed to implement DeepSeek-R1 for Amazon Bedrock directly via JavaScript version of the AWS SDK (ie. `@aws-sdk/client-bedrock-runtime`), but the model responses are not stable where sometimes it will return the reasoning/thinking part of the model with no token tags (for eg. `</think>`, `<|Assistant|>`, `<|end_of_sentence|>` etc.) which will allow us to filter out the reasoning/thinking part. Because of this, I have decided not to release this implementation for now.
 
 ## Contributions 🤝
 
