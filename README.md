@@ -280,6 +280,10 @@ Would you like me to check another day or clarify further?
 - Managed to implement DeepSeek-R1 for Amazon Bedrock directly via JavaScript version of the AWS SDK (ie. `@aws-sdk/client-bedrock-runtime`), but the model responses are not stable where sometimes it will return the reasoning/thinking part of the model with no token tags (for eg. `</think>`, `<|Assistant|>`, `<|end_of_sentence|>` etc.) which will allow us to filter out the reasoning/thinking part. Because of this, I have decided not to release this implementation for now.
 - The DeepSeek-R1 Python implementation for Amazon Bedrock via LangChain's ChatBedrockConverse class was successful. Please refer to the equivalent Python repo for this package here: https://github.com/leockl/tool-ahead-of-time.
 
+6th April 2025:
+- Special Update: Updated repo to include implementation support for using LangChain's MCP Adapters library with DeepSeek-R1 671B (via LangChain's ChatOpenAI class on OpenRouter).
+- Special Update: Updated repo to include implementation support for using LangGraph's Bigtool library with DeepSeek-R1 671B (via LangChain's ChatOpenAI class on OpenRouter).
+
 ## Contributions 🤝
 
 Feel free to contribute! Whether it's adding features, fixing bugs, adding comments in the code or any suggestions to improve this repo, all are welcomed 😄
