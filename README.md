@@ -281,8 +281,8 @@ Would you like me to check another day or clarify further?
 - The DeepSeek-R1 Python implementation for Amazon Bedrock via LangChain's ChatBedrockConverse class was successful. Please refer to the equivalent Python repo for this package here: https://github.com/leockl/tool-ahead-of-time.
 
 6th April 2025:
-- Special Update: Updated repo to include implementation support for using LangChain's MCP Adapters library with DeepSeek-R1 671B (via LangChain's ChatOpenAI class on OpenRouter).
-- Special Update: Updated repo to include implementation support for using LangGraph's Bigtool library with DeepSeek-R1 671B (via LangChain's ChatOpenAI class on OpenRouter).
+- Special Update: Updated repo to include implementation support for using LangChain.js's MCP Adapters library with DeepSeek-R1 671B (via LangChain.js's ChatOpenAI class on OpenRouter).
+- Special Update: Implementation support for using LangGraph's Bigtool library with DeepSeek-R1 671B (via LangChain's ChatOpenAI class on OpenRouter) was not included as there is currently no JavaScript/TypeScript support for the LangGraph's Bigtool library. The Python implementation for this was successful, see the equivalent Python repo here: https://github.com/leockl/tool-ahead-of-time.
 
 ## Contributions 🤝
 
