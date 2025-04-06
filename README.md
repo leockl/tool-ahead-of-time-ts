@@ -179,6 +179,85 @@ The sentence "I built my 1st Hello World program" contains **7 words**.
 The number of languages in the world is a complex and debated figure, but the most commonly cited estimate from Ethnologue is **7,100+ living languages**. This number can vary based on classification criteria and ongoing documentation efforts.
 ```
 
+### 4. LangChain's MCP Adapters library with DeepSeek-R1 671B (via LangChain's ChatOpenAI class on OpenRouter)
+
+For this section, please refer to the "TutorialMcpAdaptersDeepSeekR1.mjs" file under the "tutorial" folder -> "McpAdapters_DeepSeekR1" sub-folder in this repo.
+
+This notebook tutorial showcases a step-by-step guide on how to implement DeepSeek-R1 connected to tools in MCP servers, using LangChain's MCP Adapters library (here: https://github.com/langchain-ai/langchain-mcp-adapters).
+
+I am using MCP servers from an MPC server registry/depository called MCP Server Cloud (here: https://mcpserver.cloud/).
+
+I will be connecting DeepSeek-R1 to 2 MCP servers, with 1 tool in each MCP server. Namely, I will be using the Brave Search MCP Server (here: https://mcpserver.cloud/server/server-brave-search) and the AccuWeather MCP Server (here: https://mcpserver.cloud/server/mcp-weather-server).
+
+To use the Brave Search MCP Server and the AccuWeather MCP Server, you will need to create a Brave Browser API key (here: https://brave.com/search/api/) and an AccuWeather API key (here: https://developer.accuweather.com/getting-started), respectively. They are both free and it's fairly straight forward to do this (but note creating a Brave Browser API key require a credit card even for the free subscription). Just ask any AI for the step-by-step guide to do this.
+
+Once you have your Brave Browser and AccuWeather API keys, save them in a .env file, along with an OpenRouter API key (for this notebook tutorial I will be using DeepSeek-R1 hosted on OpenRouter). This .env file is saved in the same folder as where this Jupyter Notebook will be saved.
+
+Now that we have all the above setup, let's get into the more technical part of this notebook tutorial. How LangChain's MCP Adapters library works is it convert tools in MCP servers into LangChain tools, so then these LangChain tools can be used within the LangChain/LangGraph framework. Yes, it's as simple as that!
+
+Currently MCP servers are still in it's early development stages and so MCP servers doesn't yet have a direct SSE (Server-Sent Events) connection. To fix this, I have used a package called Supergateway (here: https://github.com/supercorp-ai/supergateway) which establishes a SSE connection for MCP servers. [Note: currently there are several other ways to connect to MCP servers including connecting to MCP servers directly via npx (see a Python package called langchain-mcp-tools here: https://github.com/hideya/langchain-mcp-tools-py) or downloading MCP servers into your local device and then connecting with the MCP server locally in your device (eg. the docker approach here: https://www.youtube.com/watch?v=rdvt1qBZJtI), but I have chosen to use the Supergateway package approach as it is more realistic to connect to remote servers via SSE connections.]
+
+Referring to the instructions in the README file in the Supergateway's GitHub repo, in particular the "stdio → SSE" section ("Expose an MCP stdio server as an SSE server:"):
+- To establish a SSE connection for the Brave Search MCP Server using Supergateway, run the following command below in your IDE's (for eg. Cursor or VS Code) Terminal window (where this will use port 8001):
+`npx -y supergateway --stdio "npx -y @modelcontextprotocol/server-brave-search" --port 8001 --baseUrl http://localhost:8001 --ssePath /sse --messagePath /message`
+- To establish a SSE connection for the AccuWeather MCP Server using Supergateway, open a 2nd Terminal window in your IDE and run the following command below in this 2nd Terminal window (where this will use port 8002):
+`npx -y supergateway --stdio "uvx --from git+https://github.com/adhikasp/mcp-weather.git mcp-weather" --port 8002 --baseUrl http://localhost:8002 --ssePath /sse --messagePath /message`
+
+**Tip:** If you are unsure how to write the commands above for other MCP servers, just copy and paste the entire README file instructions in Supergateway's GitHub repo and the entire content of the MCP server page in the MCP Server Cloud registry/depository wesbite (for eg. for the Brave Search MCP Server, copy and paste the entire content from this page from the MCP Server Cloud registry/depository website: https://mcpserver.cloud/server/server-brave-search) into an AI and ask the AI to give you the "stdio → SSE" command.
+
+Now that you have both the Brave Search MCP Server and AccuWeather MCP Server SSE connections running, you can now run the "TutorialMcpAdaptersDeepSeekR1.mjs" file which uses `http://localhost:8001/sse` for the Brave Search MCP Server and `http://localhost:8002/sse` for the AccuWeather MCP Server. 
+
+First, create an empty "tutorial" folder and an empty "McpAdapters_DeepSeekR1" sub-folder in your local device. Then copy the "TutorialMcpAdaptersDeepSeekR1.mjs" and ".env" files (under the "tutorial" folder and "McpAdapters_DeepSeekR1" sub-folder in this repo) into your empty "McpAdapters_DeepSeekR1" sub-folder in your local device. Note the "TutorialMcpAdaptersDeepSeekR1.mjs file needs to be saved as a .mjs file and you will need to enter your own API keys into the ".env" file.
+
+Then run the following lines of code in your IDE Terminal:
+
+```
+# Navigate to the "McpAdapters_DeepSeekR1" sub-directory in your local device
+cd tutorial\McpDeepSeepR1
+
+# Initialize as npm project
+npm init -y
+
+# Npm install dependencies required in the "TutorialMcpAdaptersDeepSeekR1.mjs" file
+npm install @langchain/mcp-adapters @langchain/langgraph @langchain/openai dotenv
+
+# Run the "TutorialMcpAdaptersDeepSeekR1.mjs" file
+node TutorialMcpDeepSeepR1.mjs
+```
+
+After running the "TutorialMcpAdaptersDeepSeekR1.mjs" file, you should see a similar results to the below:
+
+```
+Here's a summary of the latest AI news from credible sources:
+
+1. **Industry Trends** (ArtificialIntelligence-News.com): Dedicated coverage of frontline AI developments, including emerging industry trends and innovations.
+
+2. **Corporate AI Adoption** (NY Times):
+   - H&M is experimenting with AI to create "digital twins" of clothing models.
+   - News outlets are grappling with accuracy issues in AI-generated content, with some issuing frequent corrections.
+
+3. **AI Chatbots** (NBC News): Focus on tools like ChatGPT, Google’s Bard, and Apple’s rumored AI chatbot, highlighting their growing role in tech.
+
+4. **Research & Robotics** (ScienceDaily): Updates on AI-driven robotics and computational models aiming to replicate human intelligence.
+
+5. **Critical Perspectives** (The Guardian): Ongoing analysis of AI’s societal impact, ethics, and policy challenges.
+
+For deeper insights, visit these sources directly using the provided links. Let me know if you’d like updates on a specific subtopic! 🤖
+Here's the weather forecast for Sydney tomorrow based on current information:
+
+**Tomorrow's Weather (Sydney, Australia):**
+- **Daytime High:** 72°F (22°C) with windy conditions and a mix of clouds and sun (AccuWeather)
+- **Rain:** Morning showers possible, decreasing through the day (The Weather Channel)
+- **Evening:** Cooler at 63°F (17°C), with lingering breezy conditions
+- **Wind:** SSW winds 15-25 mph (24-40 km/h)
+
+Key details: Expect a brisk day with morning showers tapering off, followed by partly sunny skies. The breeze will make it feel cooler than the actual temperature.
+
+Would you like me to check another day or clarify further?
+```
+
+**Takeaway:** This notebook tutorial demonstrates that even without having DeepSeek-R1 fine-tuned for tool calling or even without using my Tool-Ahead-of-Time package (since LangChain's MCP Adapters library works by converting tools in MCP servers into LangChain tools), MCP (via LangChain's MCP Adapters library) still works with DeepSeek-R1.
+
 ## Changelog 📖
 
 20th Feb 2025:
