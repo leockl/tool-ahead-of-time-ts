@@ -185,7 +185,7 @@ For this section, please refer to the "TutorialMcpAdaptersDeepSeekR1.mjs" file u
 
 This notebook tutorial showcases a step-by-step guide on how to implement DeepSeek-R1 connected to tools in MCP servers, using LangChain's MCP Adapters library (here: https://github.com/langchain-ai/langchain-mcp-adapters).
 
-I am using MCP servers from an MPC server registry/depository called MCP Server Cloud (here: https://mcpserver.cloud/).
+I am using MCP servers from an MPC server registry/depository called MCP Server Cloud (here: https://mcpserver.cloud/, or their GitHub repo here: https://github.com/modelcontextprotocol).
 
 I will be connecting DeepSeek-R1 to 2 MCP servers, with 1 tool in each MCP server. Namely, I will be using the Brave Search MCP Server (here: https://mcpserver.cloud/server/server-brave-search) and the AccuWeather MCP Server (here: https://mcpserver.cloud/server/mcp-weather-server).
 
