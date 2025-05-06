@@ -256,6 +256,8 @@ Key details: Expect a brisk day with morning showers tapering off, followed by p
 Would you like me to check another day or clarify further?
 ```
 
+Remember once you are done with using the MCP Servers, you can close off or disconnect the MCP Server's SSE connections by typing "CTRL" + "C" keys in your IDE's Terminal window.
+
 **Takeaway:** This notebook tutorial demonstrates that even without having DeepSeek-R1 fine-tuned for tool calling or even without using my Tool-Ahead-of-Time package (since LangChain's MCP Adapters library works by converting tools in MCP servers into LangChain tools), MCP (via LangChain's MCP Adapters library) still works with DeepSeek-R1.
 
 ## Changelog 📖
