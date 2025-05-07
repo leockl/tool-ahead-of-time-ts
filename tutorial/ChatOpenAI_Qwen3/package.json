@@ -1,0 +1,17 @@
+{
+  "name": "chatopenai_qwen3",
+  "version": "1.0.0",
+  "main": "taotTutorialChatOpenAI_Qwen3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@langchain/openai": "^0.5.10",
+    "dotenv": "^16.5.0",
+    "taot-ts": "^0.1.7"
+  }
+}
