@@ -260,6 +260,39 @@ Remember once you are done with using the MCP Servers, you can close off or disc
 
 **Takeaway:** This notebook tutorial demonstrates that even without having DeepSeek-R1 fine-tuned for tool calling or even without using my Tool-Ahead-of-Time package (since LangChain's MCP Adapters library works by converting tools in MCP servers into LangChain tools), MCP (via LangChain's MCP Adapters library) still works with DeepSeek-R1. This is likely because DeepSeek-R1 671B is a reasoning model and also how the prompts are written within LangChain's MCP Adapters library.
 
+### 5. LangChain.js's ChatOpenAI class (using Qwen3 models on OpenRouter)
+
+First, create an empty "tutorial" folder and an empty "ChatOpenAI_Qwen3" sub-folder in your local device. Then copy the "taotTutorialChatOpenAI_Qwen3.js" and ".env" files (under the "tutorial" folder and "ChatOpenAI_Qwen3" sub-folder in this repo) into your empty "ChatOpenAI_Qwen3" sub-folder in your local device. Note you will need to enter your own API key into the ".env" file.
+
+Then run the following lines of code:
+
+```bash
+# Navigate to the "ChatOpenAI_Qwen3" sub-directory in your local device
+cd tutorial\ChatOpenAI_Qwen3
+
+# Initialize as npm project
+npm init -y
+
+# Npm install the "taot-ts" package
+npm install taot-ts
+
+# Npm install dependencies required in the "taotTutorialChatOpenAI_Qwen3.js" file
+npm install dotenv @langchain/openai
+
+# Run the "taotTutorialChatOpenAI_Qwen3.js" file
+node taotTutorialChatOpenAI_Qwen3.js
+```
+
+After running the "taotTutorialChatOpenAI_QwQ32B.js" file, you should see a similar results to the below:
+
+```bash
+123 multiplied by 456 equals 56,088.
+The sentence "I built my 1st Hello World program" contains 7 words.
+The product of 123 multiplied by 456 is **56,088**. Let me know if you need help with anything else! 🧮😊
+The sentence contains 7 words: "I," "built," "my," "1st," "Hello," "World," and "program."
+The exact number of languages in the world is difficult to determine precisely, but estimates range around **7,000** living languages. This number varies due to factors like language extinction, dialect classification, and ongoing linguistic research. No tool is needed for this factual question.
+```
+
 ## Changelog 📖
 
 20th Feb 2025:
@@ -285,6 +318,9 @@ Remember once you are done with using the MCP Servers, you can close off or disc
 6th April 2025:
 - Special Update: Updated repo to include implementation support for using LangChain.js's MCP Adapters library with DeepSeek-R1 671B (via LangChain.js's ChatOpenAI class on OpenRouter).
 - Special Update: Implementation support for using LangGraph's Bigtool library with DeepSeek-R1 671B (via LangChain's ChatOpenAI class on OpenRouter) was not included as there is currently no JavaScript/TypeScript support for the LangGraph's Bigtool library. The Python implementation for this was successful, see the equivalent Python repo here: https://github.com/leockl/tool-ahead-of-time.
+
+7th May 2025:
+- Updated repo to include example tutorial for tool calling support for all the Qwen3 models using Langchain's ChatOpenAI class (hosted on OpenRouter), with the exception of the Qwen3 0.6B model. My observation is that the Qwen 0.6B model is just not "smart" or performant enough to understand when tool use is required.
 
 ## Contributions 🤝
 
