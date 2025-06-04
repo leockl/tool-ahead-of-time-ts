@@ -293,6 +293,39 @@ The sentence contains 7 words: "I," "built," "my," "1st," "Hello," "World," and 
 The exact number of languages in the world is difficult to determine precisely, but estimates range around **7,000** living languages. This number varies due to factors like language extinction, dialect classification, and ongoing linguistic research. No tool is needed for this factual question.
 ```
 
+### 6. LangChain.js's ChatOpenAI class (using DeepSeek-R1-0528 685B on OpenRouter)
+
+First, create an empty "tutorial" folder and an empty "ChatOpenAI_DeepSeekR10528" sub-folder in your local device. Then copy the "taotTutorialChatOpenAIDeepSeekR10528.js" and ".env" files (under the "tutorial" folder and "ChatOpenAI_DeepSeekR10528" sub-folder in this repo) into your empty "ChatOpenAI_DeepSeekR10528" sub-folder in your local device. Note you will need to enter your own API key into the ".env" file.
+
+Then run the following lines of code:
+
+```bash
+# Navigate to the "ChatOpenAI_DeepSeekR10528" sub-directory in your local device
+cd tutorial\ChatOpenAI_DeepSeekR10528
+
+# Initialize as npm project
+npm init -y
+
+# Npm install the "taot-ts" package
+npm install taot-ts
+
+# Npm install dependencies required in the "taotTutorialChatOpenAI.js" file
+npm install dotenv @langchain/openai
+
+# Run the "taotTutorialChatOpenAI.js" file
+node taotTutorialChatOpenAIDeepSeekR10528.js
+```
+
+After running the "taotTutorialChatOpenAIDeepSeekR10528.js" file, you should see a similar results to the below:
+
+```bash
+123 multiplied by 456 equals 56,088.
+There are 7 words in the sentence "I built my 1st Hello World program."
+The result of multiplying 123 by 456 is 56,088.
+That sentence has 7 words.
+The exact number of languages in the world is difficult to determine due to factors like dialects, endangered languages, and ongoing linguistic research. However, according to major linguistic references like Ethnologue, there are approximately **7,000 to 8,000** living languages spoken globally today. This number fluctuates as languages evolve or become extinct.
+```
+
 ## Changelog 📖
 
 20th Feb 2025:
@@ -321,6 +354,9 @@ The exact number of languages in the world is difficult to determine precisely, 
 
 7th May 2025:
 - Updated repo to include example tutorial for tool calling support for all the Qwen3 models using Langchain's ChatOpenAI class (hosted on OpenRouter), with the exception of the Qwen3 0.6B model. My observation is that the Qwen 0.6B model is just not "smart" or performant enough to understand when tool use is required.
+
+4th Jun 2025:
+- Updated repo to include example tutorial for tool calling support for DeepSeek-R1-0528 685B model using Langchain's ChatOpenAI class (hosted on OpenRouter).
 
 ## Contributions 🤝
 
