@@ -1,0 +1,17 @@
+{
+  "name": "chatopenai_deepseekr10528",
+  "version": "1.0.0",
+  "main": "taotTutorialChatOpenAIDeepSeekR10528.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@langchain/openai": "^0.5.11",
+    "dotenv": "^16.5.0",
+    "taot-ts": "^0.2.4"
+  }
+}
